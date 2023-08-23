@@ -116,16 +116,19 @@ body {
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    top: 50%; /* THIS SHOULD BE SET BY JS*/
-    left: 70%; /* THIS SHOULD BE SET BY JS*/
     position: absolute;
     background: #181d1e;
+    transition: all 0.3s ease-in-out;
 }
 
 .location svg {
     width: 28px;
     height: 28px;
     fill: var(--primaryColor);
+}
+
+.location:hover {
+    box-shadow: 0px 0px 10px var(--primaryShadow);
 }
 
 .actions {
@@ -142,6 +145,11 @@ body {
     font-weight: 900;
     border: none;
     cursor: pointer;
+    transition: all 300ms ease-out;
+}
+
+.actions button:hover {
+    transform: scale(1.1);
 }
 
 .actions .last {
@@ -153,4 +161,23 @@ body {
 .actions .spawn {
     background: var(--primaryColor);
     box-shadow: 0px 0px 15px var(--primaryShadow);
+}
+
+@media screen and (min-width: 1366px) {
+    .spawn-selector {
+        width: 1200px;
+        height: 750px;
+    }
+    .map h2 {
+        font-size: 2.4rem;
+    }
+    .map .current-location img {
+        width: 300px;
+    }
+    .map .current-location h3 {
+        font-size: 1.4rem;
+    }
+    .map .current-location {
+        bottom: 0.5rem;
+    }
 }
