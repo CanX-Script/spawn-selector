@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primaryColor: #2ddfc7;
+    --primaryShadow: rgb(45, 223, 199, 0.5);
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #151a1c 0%, #191e1f 100%);
+    overflow: hidden;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+/* BACKGROUND AND DETAILS ON IT */
+
+.background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    opacity: 5%;
+}
+
+.dot-pattern {
+    height: 720px;
+    width: 480px;
+    background-image: radial-gradient(var(--primaryColor) 2px, transparent 0);
+    background-size: 40px 40px;
+    opacity: 20%;
+    position: absolute;
+}
+
+.dot-pattern[data-idx="1"] {
+    top: 5%;
+    left: 5%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.dot-pattern[data-idx="2"] {
+    bottom: 5%;
+    right: 5%;
+    transform: translate(50%, 50%) rotate(45deg);
+}
+
+/* MAIN CONTENT */
+
+.spawn-selector {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.map {
+    width: 100%;
+    background-image: url(./map.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-grow: 1;
+}
+
+.map h2 {
+    position: absolute;
+    left: 50%;
+    top: -3%;
+    transform: translateX(-50%);
+    color: var(--primaryColor);
+    text-shadow: 0px 0px 15px var(--primaryShadow);
+}
+
+.map .current-location {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1rem;
+    transform: translateY(-50%);
+}
+
+.map .current-location img {
+    width: 200px;
+}
+
+.map .locations {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.location {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    top: 50%; /* THIS SHOULD BE SET BY JS*/
+    left: 70%; /* THIS SHOULD BE SET BY JS*/
+    position: absolute;
+    background: #181d1e;
+}
+
+.location svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--primaryColor);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.actions button {
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    height: 4rem;
+    width: 12rem;
+    font-weight: 900;
+    border: none;
+    cursor: pointer;
+}
+
+.actions .last {
+    background: linear-gradient(137deg, #303030 0%, #414141 100%);
+    box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.12);
+    color: white;
+}
+
+.actions .spawn {
+    background: var(--primaryColor);
+    box-shadow: 0px 0px 15px var(--primaryShadow);
+}
