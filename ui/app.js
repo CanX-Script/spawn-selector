@@ -13,7 +13,7 @@ const locations = [
         image: "locations-image/bank2.png",
         css: {
             top: "50%",
-            left: "70%",
+            // left: "70%",
         },
         coords: null,
     },
