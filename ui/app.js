@@ -1,35 +1,20 @@
-const locations = [
-    {
-        loc_name: "CENTERAL BANK1",
-        image: "locations-image/bank.png",
-        css: {
-            top: "20%",
-            left: "70%",
-        },
-        coords: null,
-    },
-    {
-        loc_name: "CENTERAL BANK2",
-        image: "locations-image/bank2.png",
-        css: {
-            top: "50%",
-            left: "70%",
-        },
-        coords: null,
-    },
-    {
-        loc_name: "CENTERAL BANK3",
-        image: "locations-image/bank.png",
-        css: {
-            top: "60%",
-            left: "70%",
-        },
-        coords: null,
-    },
-];
+var Selected_Loc = null
 
-$(document).ready(function () {
-    console.log("test");
+window.addEventListener("message", function(event)
+{
+	if(event.data.Action == 'ShowUi')
+	{
+		if(event.data.Display){
+			$('body').css('display', 'block');
+            ShowUi(event.data.Data)
+		}else{
+			$('body').css('display', 'none');
+		};
+	};
+});
+
+function ShowUi(locations){
+    console.log(JSON.stringify(locations));
     for (const location of locations) {
         const svg = $(
             `<div class="location">
@@ -43,15 +28,32 @@ $(document).ready(function () {
         const div = $("<div>").addClass("location");
         div.append(svg);
         div.css({
-            top: location.css.top,
-            left: location.css.left,
+            top: location.Css.top,
+            left: location.Css.left,
         });
+        
         div.click(() => {
-            $(".current-location img").attr("src", location.image);
-            $(".current-location h3").text(location.loc_name);
+            $(".current-location img").attr("src", location.Image);
+            $(".current-location h3").text(location.Loc_Name);
+            Selected_Loc = location.Loc_Name
         });
         $(".locations").append(div);
     }
-    $(".current-location img").attr("src", locations[0].image);
-    $(".current-location h3").text(locations[0].loc_name);
-});
+    $(".current-location img").attr("src", locations[0].Image);
+    $(".current-location h3").text(locations[0].Loc_Name);
+    Selected_Loc = locations[0].Loc_Name
+}
+
+function Spawn(){
+   
+    $.post('https://CanX-SpawnSelector/spawn',JSON.stringify({location:Selected_Loc}))
+
+    $("body").css("display","none");
+}
+
+function Spawn2(){
+    $.post('https://CanX-SpawnSelector/last-loc',JSON.stringify({}))
+    $("body").css("display","none");
+}
+
+
