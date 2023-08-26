@@ -1,5 +1,7 @@
 # Spawn Selector
 
 
-# Discord 
-https://discord.gg/jvQDWCg7Db
+# CanX community
+
+*Discord
+https://discord.gg/jvQDWCg7Db*
