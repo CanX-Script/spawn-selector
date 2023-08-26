@@ -1,3 +1,8 @@
+-- <<<     CanX Spawn Selector     >>> --|
+--    Discord : discord.gg/MGEVjBbKHw  --|                      
+--        Tebex : canx.tebex.io        --|        
+-- <<<     CanX Spawn Selector     >>> --|
+
 Config = {}
 
 Config.Locations = {

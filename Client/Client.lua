@@ -1,3 +1,8 @@
+-- <<<     CanX Spawn Selector     >>> --|
+--    Discord : discord.gg/MGEVjBbKHw  --|                      
+--        Tebex : canx.tebex.io        --|        
+-- <<<     CanX Spawn Selector     >>> --|
+
 AddEventHandler('playerSpawned', function(spawn)
 	TriggerServerEvent('CanX-SpawnSelector:OpenSpawner')
 end)
