@@ -46,13 +46,13 @@ function ShowUi(locations){
 
 function Spawn(){
    
-    $.post('https://CanX-SpawnSelector/spawn',JSON.stringify({location:Selected_Loc}))
+    $.post('https://spawn-selector/spawn',JSON.stringify({location:Selected_Loc}))
 
     $("body").css("display","none");
 }
 
 function Spawn2(){
-    $.post('https://CanX-SpawnSelector/last-loc',JSON.stringify({}))
+    $.post('https://spawn-selector/last-loc',JSON.stringify({}))
     $("body").css("display","none");
 }
 
