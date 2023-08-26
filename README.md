@@ -16,3 +16,5 @@ https://discord.gg/jvQDWCg7Db*
 https://www.youtube.com/@CanX-Script*
 *Cfx 
 https://forum.cfx.re/u/canx-script*
+
+# Follow our community for other scripts
