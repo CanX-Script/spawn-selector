@@ -14,3 +14,5 @@ Usage 0.00 MS*
 https://discord.gg/jvQDWCg7Db*
 *youtube 
 https://www.youtube.com/@CanX-Script*
+*Cfx 
+https://forum.cfx.re/u/canx-script*
