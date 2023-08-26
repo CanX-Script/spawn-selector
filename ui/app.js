@@ -1,20 +1,17 @@
-var Selected_Loc = null
+let Selected_Loc = null;
 
-window.addEventListener("message", function(event)
-{
-	if(event.data.Action == 'ShowUi')
-	{
-		if(event.data.Display){
-			$('body').css('display', 'block');
-            ShowUi(event.data.Data)
-		}else{
-			$('body').css('display', 'none');
-		};
-	};
+window.addEventListener("message", function (event) {
+    if (event.data.Action == "ShowUi") {
+        if (event.data.Display) {
+            $("body").css("display", "block");
+            ShowUi(event.data.Data);
+        } else {
+            $("body").css("display", "none");
+        }
+    }
 });
 
-function ShowUi(locations){
-    console.log(JSON.stringify(locations));
+function ShowUi(locations) {
     for (const location of locations) {
         const svg = $(
             `<div class="location">
@@ -31,29 +28,28 @@ function ShowUi(locations){
             top: location.Css.top,
             left: location.Css.left,
         });
-        
+
         div.click(() => {
             $(".current-location img").attr("src", location.Image);
             $(".current-location h3").text(location.Loc_Name);
-            Selected_Loc = location.Loc_Name
+            Selected_Loc = location.Loc_Name;
         });
         $(".locations").append(div);
     }
     $(".current-location img").attr("src", locations[0].Image);
     $(".current-location h3").text(locations[0].Loc_Name);
-    Selected_Loc = locations[0].Loc_Name
+    Selected_Loc = locations[0].Loc_Name;
 }
 
-function Spawn(){
-   
-    $.post('https://spawn-selector/spawn',JSON.stringify({location:Selected_Loc}))
+$(".last").click(() => {
+    $.post("https://spawn-selector/last-loc", JSON.stringify({}));
+    $("body").css("display", "none");
+});
 
-    $("body").css("display","none");
-}
-
-function Spawn2(){
-    $.post('https://spawn-selector/last-loc',JSON.stringify({}))
-    $("body").css("display","none");
-}
-
-
+$(".spawn").click(() => {
+    $.post(
+        "https://spawn-selector/spawn",
+        JSON.stringify({ location: Selected_Loc })
+    );
+    $("body").css("display", "none");
+});
