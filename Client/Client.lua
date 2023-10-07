@@ -3,9 +3,9 @@
 --        Tebex : canx.tebex.io        --|        
 -- <<<     CanX Spawn Selector     >>> --|
 
-AddEventHandler('playerSpawned', function(spawn)
-	TriggerServerEvent('CanX-SpawnSelector:OpenSpawner')
-end)
+-- AddEventHandler('playerSpawned', function(spawn)
+-- 	TriggerServerEvent('CanX-SpawnSelector:OpenSpawner')
+-- end)
 
 RegisterNetEvent('CanX-SpawnSelector:Open')
 AddEventHandler('CanX-SpawnSelector:Open', function()
